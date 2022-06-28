@@ -13,6 +13,11 @@ Currently only **reading** of files is supported, the capability to write/change
 
 # How do I use it?
 
+## Compiling
+
+You will need Go installed to compile this. Download the latest version from golang.org.
+To build floppymount change to the floppymount directory and run `go build cmd/floppymount.go`.
+
 ## Mounting a DOS68 image
 
 The utility will output a listing of the image and mount it using FUSE.
