@@ -162,13 +162,13 @@ func (i *DiskImage) String() string {
 	dir := i.getDirectory()
 
 	listing := fmt.Sprintf("DISK LABEL: %s\nCREATED:    %s\n", i.label(), i.creationDate().Format("2006-01-02"))
-	listing += "\n FILE NAME     ATTR  STRT  END   NSEC  SMI  DATE\n"
+	listing += "\nFILE NAME     ATTR  STRT  END   NSEC  SMI  DATE\n"
 
 	for _, f := range *dir {
 		if f.deleted || !f.allocated {
 			continue
 		}
-		listing += " " + f.String() + "\n"
+		listing += f.String() + "\n"
 	}
 
 	listing += fmt.Sprintf("\n FREE SECTORS= %d\n", i.freeSectors())
